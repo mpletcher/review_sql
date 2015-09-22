@@ -1,0 +1,103 @@
+SQL Revision
+
+SQL statements are divided into two major categories:
+Data definition language (DDL) - used specifically to define data structures
+Data manipulation language (DML) - used by computer programs to manipulate data in a database
+
+Null - it means no values (I don't know)
+DB language is not sensitive
+
+>> NULL Conditions
+SELECT * FROM test WHERE a IS NULL;
+SELECT * FROM test WHERE a IS NOT NULL;
+
+* Functions in SQL *
+// Database used: world.db
+
+SELECT - it returns rows
+* - it returns entities
+    FROM - Source of table
+    
+>> ORDER BY - specifies order (sort)
+    SELECT * FROM Country ORDER BY Name;
+
+Specifying what entities we want
+    SELECT Name, LifeExpectancy FROM Country ORDER BY Name;
+
+Specifying a different label in a table when its return
+    SELECT Name, LifeExpectancy AS 'Life Expectancy' FROM Country ORDER BY Name;
+
+>> COUNT
+Returning the total counter of results
+    SELECT COUNT(*) FROM Country; // it counts the number of rows
+
+Selecting particular entities
+    SELECT * FROM Country ORDER BY Code LIMIT 5; // it limits 5 rows
+
+Specifying different labels in tables when those return results
+    SELECT Name AS Country, Code AS 'Area ISO', Region AS Location, Population AS Pop FROM Country ORDER BY Code LIMIT 5;
+
+>> WHERE
+Specifying those countries that have population over 100 million
+    SELECT COUNT(*) FROM Country WHERE Population > 1000000;
+
+>> AND
+Specifying those countries that have the same population but in Europe
+    SELECT COUNT(*) FROM Country WHERE Population > 1000000 AND Continent = 'Europe';
+
+
+Inserting Data - Four basic functions are Create, Retrieve, Update, and Delete (CRUD)
+// Database used: test.db
+
+>> Insert
+Inserting data into entity
+    E.g. Marcos Pletcher    
+    INSERT INTO Customer (name, address, city, state, zip) VALUES ('Mark Pletcher', '5209 53rd Ave', 'Bettendorf', 'IA', '52722');
+    SELECT * FROM Customer;    
+    
+    E.g. Tim Pletcher
+    INSERT INTO Customer (name, city, state, zip) VALUES ('Tim Pletcher', 'Bettendorf', 'IA', '52722');
+    SELECT * FROM Customer;    
+
+>> Update Set
+Updating data into entity
+    E.g. Tim Pletcher
+    UPDATE Customer SET Address = '5209 53rd Ave' WHERE id = 5;    
+    SELECT * FROM Customer;   	 
+    
+>> Delete
+Erasing data into entity    
+    DELETE FROM Customer WHERE id = 3;   	 
+    SELECT * FROM Customer;   		 
+
+>> Selecte a Attribute    
+    SELECT * FROM Customer WHERE id = 3;    
+    
+>> Creating Tables
+By using Create Table Statement.
+    CREATE TABLE test (
+   	 ComputerID INTEGER, // Columns
+   	 ComputerName TEXT
+    );
+    INSERT INTO test VALUES (1, 'MacBook Air');    
+    INSERT INTO test VALUES (2, 'MacBook PRO');
+    INSERT INTO test VALUES (3, 'iMac');    
+    SELECT * FROM test;
+    
+
+    Note -- DB Schema: Part between parenthesis. Think of a schema as a container of objects. You can assign a user login permissions to a single schema so that the user can only access the objects they are authorized to access
+    
+>> Deleting entire table
+By using the DROP TABLE Statement
+    
+CREATE TABLE Computer (
+    ComputerID INTEGER,
+    ComputerName TEXT
+);
+INSERT INTO Computer VALUES (1, 'MacBook Air');    
+INSERT INTO Computer VALUES (2, 'MacBook PRO');
+INSERT INTO Computer VALUES (3, 'iMac');    
+DROP TABLE Computer;
+SELECT * FROM Computer;    
+
+
