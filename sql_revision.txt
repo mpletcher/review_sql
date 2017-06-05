@@ -100,4 +100,10 @@ INSERT INTO Computer VALUES (3, 'iMac');
 DROP TABLE Computer;
 SELECT * FROM Computer;    
 
+>> Create tables with primary keys in SQLite using the following syntax
+CREATE TABLE your_table_name (
+  id INTEGER PRIMARY KEY,
+  ... the rest of your attributes go here ...
+);
+
 
