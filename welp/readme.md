@@ -52,6 +52,7 @@ INSERT INTO users (first_name, last_name) VALUES ("Holly", "Berry");
 INSERT INTO users (first_name, last_name) VALUES ("Merryl", "Streep");
 INSERT INTO users (first_name, last_name) VALUES ("Denzel", "George");
 ```
+
 ```
 INSERT INTO businesses (name) VALUES ("Grundy Hollow Wedding Chapel");
 INSERT INTO businesses (name) VALUES ("Amir's Towing");
@@ -62,7 +63,16 @@ INSERT INTO businesses (name) VALUES ("Sushi World");
 INSERT INTO businesses (name) VALUES ("JoeBob's Sport Barn");
 ```
 
-*checked*
+```
+INSERT INTO businesses_users (user_id, business_id) VALUES (1,1);
+INSERT INTO businesses_users (user_id, business_id) VALUES (2,2);
+INSERT INTO businesses_users (user_id, business_id) VALUES (3,3);
+INSERT INTO businesses_users (user_id, business_id) VALUES (4,6);
+INSERT INTO businesses_users (user_id, business_id) VALUES (5,4);
+INSERT INTO businesses_users (user_id, business_id) VALUES (6,5);
+INSERT INTO businesses_users (user_id, business_id) VALUES (7,7);
+```
+
 
 ## Release 1: Connect the Tables
 1. Build the reviews table depicted in the second schema. When you create the table, you'll need to declare two foreign keys and a primary key, along with any data needed for the review.
