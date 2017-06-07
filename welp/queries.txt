@@ -1,0 +1,48 @@
+## Release 2: View a Many‐to‐Many Relationship
+1. In the welp directory, create a file called queries.txt . Once you've figured out the queries below, paste them into queries.txt , along with the output from your database.
+
+```
+touch queries.txt
+```
+
+2. You've joined two tables before. How do you join three?
+
+```
+SELECT * FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+```
+
+(PK1) Rev| Star | Comment | (FK) users| (FK) business | (PK1) Users | First Name | Last Name | (PK1) Biz | Biz Name 
+1|5|Stellar service|1|1|1|Bradford|Pitt|1|Grundy Hollow Wedding Chapel
+2|4|Good service|2|2|2|Mandy|Kaling|2|Amir's Towing
+3|3|Not bad service|3|3|3|Angela|Jolie|3|The Beagle Nightclub
+4|2|Don't go back|4|3|3|Angela|Jolie|4|Lotus Yoga
+5|5|Stellar service|5|5|5|Holly|Berry|5|Plumbing by Janet
+6|4|Good service|6|6|6|Merryl|Streep|6|Sushi World
+7|5|Stellar service|7|7|7|Denzel|George|7|JoeBob's Sport Barn
+
+
+3. There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+```
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+```
+
+First Name| Last Name | Biz Name | Star | Comment
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|Stellar service
+Mandy|Kaling|Amir's Towing|4|Good service
+Angela|Jolie|The Beagle Nightclub|3|Not bad service
+Angela|Jolie|Lotus Yoga|2|Don't go back
+Holly|Berry|Plumbing by Janet|5|Stellar service
+Merryl|Streep|Sushi World|4|Good service
+Denzel|George|JoeBob's Sport Barn|5|Stellar service
+
+
+4. How do you view the data of all three tables for just one particular business?
+
+```
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id WHERE business_id = 6;
+
+```
+
+First Name| Last Name | Biz Name | Star | Comment
+Merryl|Streep|Sushi World|4|Good service
