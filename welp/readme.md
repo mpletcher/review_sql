@@ -111,7 +111,7 @@ INSERT INTO reviews (stars, comment, user_id, business_id) VALUES (5,"Stellar se
 ```
 
 
-## Release 2: View a Many‐to‐Many Rela onship
+## Release 2: View a Many‐to‐Many Relationship
 1. In the welp directory, create a file called queries.txt . Once you've figured out the queries below, paste them into queries.txt , along with the output from your database.
 
 ```
