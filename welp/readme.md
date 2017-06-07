@@ -167,4 +167,4 @@ Merryl|Streep|Sushi World|4|Good service
 ## Release 3: Draw a Schema
 Draw a schema showing how you would set up this many­to­many relationship in a database
 
-![Our ERD](https://raw.githubusercontent.com/mpletcher/phase-0-tracks/master/databases/solo_project/erd_doctors_appointment.png)
+![Our ERD](https://raw.githubusercontent.com/mpletcher/review_sql/blob/master/sql_revision.txt/erd.png)
