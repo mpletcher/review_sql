@@ -76,6 +76,21 @@ INSERT INTO businesses_users (user_id, business_id) VALUES (7,7);
 
 ## Release 1: Connect the Tables
 1. Build the reviews table depicted in the second schema. When you create the table, you'll need to declare two foreign keys and a primary key, along with any data needed for the review.
+```
+DROP TABLE businesses_users;
+```
+```
+CREATE TABLE reviews (
+	id INTEGER PRIMARY KEY,
+    stars INT,
+    comment VARCHAR(255),
+    business_id INT,
+    user_id INT,
+    FOREIGN KEY(business_id) REFERENCES businesses(id),
+    FOREIGN KEY(user_id) REFERENCES users(id) 
+);
+```
+
 2. Populate your reviews table with a few pieces of data. You'll need to provide valid integers for both of the foreign keys (one valid id of a user, and one valid id of a business). An example review might consist of 5 stars, the text "great food!", a business ID of 1, and a user ID of 1 (provided you have a business with a primary key of 1 and a user with a primary key of 1).
 
 
