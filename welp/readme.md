@@ -3,18 +3,21 @@
 
 
 1. Create a folder for this project in phase-0-tracks/databases called welp .
+
 ```
 mkdir welp
 ```
 
 
 2. In the welp directory, create a database called welp.db .
+
 ```
 sqlite3 welp.db
 ```
 
 
 3. Create the businesses table. Make sure to use a primary key.
+
 ```
 CREATE TABLE businesses (
 	id INTEGER PRIMARY KEY,
@@ -23,6 +26,7 @@ CREATE TABLE businesses (
 ```
 
 4. Create the users table. Make sure to use a primary key.
+
 ```
 CREATE TABLE users (
 	id INTEGER PRIMARY KEY,
@@ -32,6 +36,7 @@ CREATE TABLE users (
 ```
 
 *This table is often called a junction table or join table, which is a simple table that connects users to businesses. It has two foreign keys; optionally, it could also have a primary key. Notice the name of the table: businesses_users . It's a convention to name simple junction tables this way, with the two table names arranged in alphabetical order and separated by an underscore.*
+
 ```
 CREATE TABLE businesses_users (
     business_id INT,
@@ -43,6 +48,7 @@ CREATE TABLE businesses_users (
 
 
 5. Populate each table with a few items.
+
 ```
 INSERT INTO users (first_name, last_name) VALUES ("Bradford", "Pitt");
 INSERT INTO users (first_name, last_name) VALUES ("Mandy", "Kaling");
@@ -76,6 +82,7 @@ INSERT INTO businesses_users (user_id, business_id) VALUES (7,7);
 
 ## Release 1: Connect the Tables
 1. Build the reviews table depicted in the second schema. When you create the table, you'll need to declare two foreign keys and a primary key, along with any data needed for the review.
+
 ```
 DROP TABLE businesses_users;
 ```
@@ -92,6 +99,16 @@ CREATE TABLE reviews (
 ```
 
 2. Populate your reviews table with a few pieces of data. You'll need to provide valid integers for both of the foreign keys (one valid id of a user, and one valid id of a business). An example review might consist of 5 stars, the text "great food!", a business ID of 1, and a user ID of 1 (provided you have a business with a primary key of 1 and a user with a primary key of 1).
+
+```
+INSERT INTO reviews (stars, comment, user_id, business_id) VALUES (5,"Stellar service", 1, 1);
+INSERT INTO reviews (stars, comment, user_id, business_id) VALUES (4,"Good service", 2, 2);
+INSERT INTO reviews (stars, comment, user_id, business_id) VALUES (3,"Not bad service", 3, 3);
+INSERT INTO reviews (stars, comment, user_id, business_id) VALUES (2,"Don't go back", 3, 4);
+INSERT INTO reviews (stars, comment, user_id, business_id) VALUES (5,"Stellar service", 5, 5);
+INSERT INTO reviews (stars, comment, user_id, business_id) VALUES (4,"Good service", 6, 6);
+INSERT INTO reviews (stars, comment, user_id, business_id) VALUES (5,"Stellar service", 7, 7);
+```
 
 
 ## Release 2: View a Many‐to‐Many Rela onship
